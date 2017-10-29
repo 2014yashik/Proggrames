@@ -1,0 +1,28 @@
+#include <iostream>
+
+using namespace std;
+
+int main()
+{
+  int N, m = 0;
+  cin >> N;
+  int* A=new int[N];
+  for (int i = 0; i < N; i++){
+    cin >> A[i];
+  }
+  if (N < 5){
+    cout << "wrong data" << endl;
+  }
+  else {
+    m = A[0] + A[4];
+    for (int i = 0; i<N-4; i++){
+      for (int j = i + 4; j<N; j++){
+        if (m > A[i] + A[j]){
+          m = A[i] + A[j];
+        }
+      }
+    }
+    cout << m;
+  }
+  return 0;
+}
